@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react"
+import { sendMail } from "@/utils/email_utils"
+import { toast } from "sonner"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -17,10 +19,30 @@ export function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    console.log("Form submitted:", formData);
+
+    const {name, email, subject, message} = formData;
+
+    const response = await sendMail(name, email, subject, message);
+ 
+    if (response.success) {
+      toast.success(response.message);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+    } else {
+      toast.error(response.message, {
+        action: {
+          label: "Réessayer",
+          onClick: () => {},
+        },
+      }) 
+    }
   }
 
   return (

@@ -6,9 +6,10 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
-  //metadataBase: new URL('https://.com'),
+  metadataBase: new URL('https://digital-hub-togo.vercel.app/'),
   title: "Digital Hub Togo - Services et Conseil en Informatique",
   description:
     "Masterclasses, cours de soutien en informatique et services de conseil IT au Togo. Rejoignez notre communauté tech.",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     description: 'Welcome to My Site',
     url: '',
     siteName: "Digital Hub Togo",
-    images: [{ url: '' }],
+    images: [{ url: './logo.webp' }],
     locale: "en_FR",
     type: "website",
   },
@@ -43,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <Toaster />
         <ThemeProvider defaultTheme="system" storageKey="digital-hub-theme">
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>

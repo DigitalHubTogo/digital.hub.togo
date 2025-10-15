@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/logo.png" alt="Digital Hub Togo" width={40} height={40} className="w-10 h-10" />
+              <Image src="/logo.webp" alt="Digital Hub Togo" width={40} height={40} className="w-10 h-10" />
               <span className="font-bold text-lg">digital hub Togo</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">

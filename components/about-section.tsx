@@ -45,7 +45,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-primary/10 p-8 flex items-center justify-center">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Digital Hub Togo Logo"
                 width={400}
                 height={400}

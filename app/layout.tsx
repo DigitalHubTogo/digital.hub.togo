@@ -27,7 +27,12 @@ export const metadata: Metadata = {
     description: 'Welcome to My Site',
     url: '',
     siteName: "Digital Hub Togo",
-    images: [{ url: '' }]
+    images: [{ url: '' }],
+    locale: "en_FR",
+    type: "website",
+  },
+  icons: {
+    icon: './logo.webp',
   },
 }
 export default function RootLayout({

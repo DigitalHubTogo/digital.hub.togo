@@ -16,7 +16,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Digital Hub Togo"
               width={50}
               height={50}
